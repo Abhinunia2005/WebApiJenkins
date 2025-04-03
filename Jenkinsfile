@@ -34,14 +34,10 @@ pipeline {
 
     post {
         success {
-            echo '✅ Deployment Successful! Restarting Web App...'
-            bat "az webapp restart --name $APP_SERVICE_NAME --resource-group $RESOURCE_GROUP"
-
-            echo '🔍 Verifying Deployment Logs...'
-            bat "az webapp log tail --name $APP_SERVICE_NAME --resource-group $RESOURCE_GROUP"
+            echo 'Deployment Successful!'
         }
         failure {
-            echo '❌ Deployment Failed! Check logs for errors.'
+            echo 'Deployment Failed!'
         }
     }
-}
+}\
