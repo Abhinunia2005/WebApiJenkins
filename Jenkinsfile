@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         AZURE_CREDENTIALS_ID = 'azure-service-principal'
-        RESOURCE_GROUP = 'rg-jenkins'
-        APP_SERVICE_NAME = 'webapijenkins8414'
+        RESOURCE_GROUP = 'rg-jenkins8414'  // FIXED: Correct Resource Group
+        APP_SERVICE_NAME = 'jenkinsproject8414'  // FIXED: Correct App Service Name
     }
 
     stages {
@@ -34,10 +34,10 @@ pipeline {
 
     post {
         success {
-            echo 'Deployment Successful!'
+            echo '✅ Deployment Successful!'
         }
         failure {
-            echo 'Deployment Failed!'
+            echo '❌ Deployment Failed! Check logs for details.'
         }
     }
 }
